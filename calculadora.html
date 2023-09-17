@@ -1,0 +1,154 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div id="contenedorprincipal">
+        <h1 id="titulo">Bienvenido a la calculadora de Sergio</h1>
+    </div>
+    <div id="contenedorprincipal" class="cuerpo">
+        <table>
+            
+            <tr>
+                <td><button id="siete">7</button></td>
+                <td><button id="ocho">8</button></td>
+                <td><button id="nueve">9</button></td>
+                <td><button id="multiplicar">*</button></td>
+            </tr>
+            <tr>
+                <td><button id="cuatro">4</button></td>
+                <td><button id="cinco">5</button></td>
+                <td><button id="seis">6</button></td>
+                <td><button id="dividir">/</button></td>
+            </tr>
+            <tr>
+                <td><button id="uno">1</button></td>
+                <td><button id="dos">2</button></td>
+                <td><button id="tres">3</button></td>
+                <td><button id="elevar">^</button></td>
+            </tr>
+            <tr>
+                <td><button id="sumar">+</button></td>
+                <td><button id="cero">0</button></td>
+                <td><button id="restar">-</button></td>
+                <td><button id="igualar">=</button></td>
+            </tr>
+            <tr>
+                <td colspan="4"><h1 id="textoresultado">Resultao: </h1><h1 id="resultado"></h1></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+        //    $("#parrafo").append("Lore Ipsum");
+        //    $(".addy").append(" y añadiendo");
+        //    $(".addy").last().remove();
+
+        //    for(i = 0; i <= 10; i++){
+        //    this.rafa=$("<p>HOla pepe</p>");
+        //    $("#addy").append(this.rafa);
+        //    }
+        var transicion;
+       var numero_uno;
+       var numero_dos;
+       var numero_final;
+       var operacion;
+   
+
+           $("#uno").click(function () {
+               $("#resultado").append("1");
+           })
+           $("#dos").click(function () {
+               $("#resultado").append("2");
+           })
+           $("#tres").click(function () {
+               $("#resultado").append("3");
+           })
+           $("#cuatro").click(function () {
+               $("#resultado").append("4");
+           })
+           $("#cinco").click(function () {
+               $("#resultado").append("5");
+           })
+           $("#seis").click(function () {
+               $("#resultado").append("6");
+           })
+           $("#siete").click(function () {
+               $("#resultado").append("7");
+           })
+           $("#ocho").click(function () {
+               $("#resultado").append("8");
+           })
+           $("#nueve").click(function () {
+               $("#resultado").append("9");
+           })
+           $("#cero").click(function () {
+               $("#resultado").append("0");
+           })
+
+           $("#multiplicar").click(function () {
+            numero_uno = parseInt($("#resultado").text());
+            operacion = 3;
+               $("#resultado").text("");
+           })
+           $("#dividir").click(function () {
+            numero_uno = parseInt($("#resultado").text());
+            operacion = 4;
+               $("#resultado").text("");
+           })
+           $("#elevar").click(function () {
+            numero_uno = parseInt($("#resultado").text());
+            operacion = 5;
+               $("#resultado").text("");
+           })
+           $("#sumar").click(function () {
+            numero_uno = parseInt($("#resultado").text());
+            operacion = 1;
+            
+               $("#resultado").text("");
+           })
+           $("#restar").click(function () {
+            numero_uno = parseInt($("#resultado").text());
+            operacion = 2;
+               $("#resultado").text("");
+           })
+
+
+
+           $("#igualar").click(function () {
+               numero_dos = parseInt($("#resultado").text());
+               switch (operacion) {
+                case 1: numero_final = numero_uno + numero_dos;
+                    break;
+                    
+                case 2: numero_final = numero_uno - numero_dos;
+                    break;
+                
+                case 3: numero_final = numero_uno * numero_dos;
+                    break;
+
+                case 4: numero_final = numero_uno / numero_dos;
+                    break;
+
+                case 5: numero_final = Math.pow(numero_uno, numero_dos);
+               }
+               $("#resultado").text(numero_final);
+           })
+
+
+       });
+
+       
+   </script>
+
+</body>
+<footer>
+    <h3 id="footertext">Web realizada por + <a href="https://github.com/Eserome"> Eserome (Github) </a><h3>
+</footer>
+</html>
